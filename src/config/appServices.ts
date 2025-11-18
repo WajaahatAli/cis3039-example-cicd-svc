@@ -11,10 +11,10 @@ export const getProductRepo = (): ProductRepo => {
     const now = new Date();
     const initialProducts: Product[] = [
       {
-        id: 'p-001',
-        name: 'Seeded Widget',
+        id: '007',
+        name: 'CR7 Jersey',
         pricePence: 1299,
-        description: 'A seeded example product for local testing.',
+        description: 'Goat Jersey',
         updatedAt: new Date(now.getTime() - 1000 * 60 * 60 * 24), // 1 day ago
       },
       {

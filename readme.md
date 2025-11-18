@@ -103,8 +103,8 @@ az policy assignment list \
 
 ```bash
 az group create \
-  --name <your-resource-group> \
-  --location <permitted-location>
+  --name wa-07-lab-rg \
+  --location francecentral
 ```
 
 Remember to follow our naming convention, e.g. shopping-lab-ab47-rg
@@ -113,9 +113,9 @@ Remember to follow our naming convention, e.g. shopping-lab-ab47-rg
 
 ```bash
 az storage account create \
-  --name <yourfuncstorageaccount> \
-  --location <permitted-location> \
-  --resource-group <your-resource-group> \
+  --name wa07labsac \
+  --location francecentral\
+  --resource-group wa-07-lab-rg\
   --sku Standard_LRS
 ```
 
@@ -123,10 +123,10 @@ az storage account create \
 
 ```bash
 az functionapp create \
-  --name <your-function-app> \
-  --resource-group <your-resource-group> \
-  --storage-account <yourfuncstorageaccount> \
-  --consumption-plan-location <permitted-location> \
+  --name wa-07-lab-fa \
+  --resource-group wa-07-lab-rg \
+  --storage-account wa07labsac \
+  --consumption-plan-location francecentral \
   --runtime node \
   --functions-version 4
 ```
@@ -137,7 +137,7 @@ Build and deploy your code to the Function App:
 
 ```bash
 npm run build
-func azure functionapp publish <your-function-app>
+func azure functionapp publish wa-07-lab-fa
 ```
 
 You can now access your endpoints at:
@@ -152,7 +152,7 @@ If needed, allow cross-domain calls from your app domain and/or localhost, for e
 
 ```bash
 az functionapp cors add \
-  --name <your-function-app> \
-  --resource-group <your-resource-group> \
+  --name wa-07-lab-fa \
+  --resource-group wa-07-lab-rg \
   --allowed-origins http://localhost:5173
 ```
