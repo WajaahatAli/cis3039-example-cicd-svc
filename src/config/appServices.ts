@@ -23,6 +23,7 @@ export const getProductRepo = (): ProductRepo => {
         pricePence: 2599,
         description: 'Another Goat Jersey.',
         updatedAt: now,
+        .
       },
     ];
     cachedProductRepo = new FakeProductRepo(initialProducts);
