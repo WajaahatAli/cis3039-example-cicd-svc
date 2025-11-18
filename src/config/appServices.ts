@@ -18,10 +18,10 @@ export const getProductRepo = (): ProductRepo => {
         updatedAt: new Date(now.getTime() - 1000 * 60 * 60 * 24), // 1 day ago
       },
       {
-        id: 'p-002',
-        name: 'Seeded Gadget',
+        id: '008',
+        name: 'Lionel Messi Jersey',
         pricePence: 2599,
-        description: 'Another seeded product to get you started.',
+        description: 'Another Goat Jersey.',
         updatedAt: now,
       },
     ];
